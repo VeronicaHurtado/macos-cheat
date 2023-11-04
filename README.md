@@ -1,4 +1,4 @@
-# macos-cheat
+# MacOS-cheat sheet
 Quick reference to most common tools when setting up a new Mac
 
 ## Pre-requisites check
