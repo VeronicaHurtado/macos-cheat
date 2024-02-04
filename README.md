@@ -58,3 +58,77 @@ aws --version
 ```
 [Installation Guide for version 2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 [Set up the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
+
+
+## NVM
+```shell
+brew update
+brew install nvm
+```
+
+Follow the post-installation instructions. e.g. "You should create NVM's working directory if it doesn't exist":
+```shell
+mkdir ~/.nvm
+```
+
+## Node
+```shell
+nvm install 20
+```
+
+## Composer
+A Dependency Manager for PHP
+```shell
+brew install composer
+```
+[Basic usage](https://getcomposer.org/doc/01-basic-usage.md)
+
+## PHP
+```shell
+brew search php
+brew install php
+php -v
+```
+> To enable PHP in Apache add the following to httpd.conf and restart Apache:
+LoadModule php_module /opt/homebrew/opt/php/lib/httpd/modules/libphp.so
+
+    <FilesMatch \.php$>
+        SetHandler application/x-httpd-php
+    </FilesMatch>
+
+> Finally, check DirectoryIndex includes index.php
+DirectoryIndex index.php index.html
+
+> The php.ini and php-fpm.ini file can be found in:
+/opt/homebrew/etc/php/8.3/
+
+> To start php now and restart at login:
+brew services start php
+Or, if you don't want/need a background service you can just run:
+/opt/homebrew/opt/php/sbin/php-fpm --nodaemonize
+
+```shell
+cd /etc/apache2
+sudo vi httpd.conf
+```
+
+## MySQL
+```shell
+brew install mysql
+```
+
+> We've installed your MySQL database without a root password. To secure it run:
+mysql_secure_installation
+
+> MySQL is configured to only allow connections from localhost by default
+
+> To connect run:
+mysql -u root
+
+> To start mysql now and restart at login:
+brew services start mysql
+Or, if you don't want/need a background service you can just run:
+/opt/homebrew/opt/mysql/bin/mysqld_safe --datadir\=/opt/homebrew/var/mysql
+
+## TablePlus
+[Download](https://tableplus.com/download)
